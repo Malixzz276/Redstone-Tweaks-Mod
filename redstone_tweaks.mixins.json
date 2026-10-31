@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.redstonetweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BlockEntityRenderDispatcherMixin",
+    "EntityRenderDispatcherMixin",
+    "ParticleEngineMixin",
+    "ObserverBlockMixin",
+    "RepeaterBlockMixin",
+    "LevelRendererMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "redstone_tweaks",
+  "version": "${version}",
+  "name": "Redstone Tweaks",
+  "description": "Performance mod: skips rendering of piston animations, TNT, observer, note block and repeater visuals while the game logic runs normally. Client-side only.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": [ "dev.redstonetweaks.RedstoneTweaksClient" ] },
+  "mixins": [ { "config": "redstone_tweaks.mixins.json", "environment": "client" } ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
