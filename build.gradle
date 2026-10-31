@@ -16,9 +16,25 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
+// Flat layout: all files sit at the top level of the repo
+sourceSets {
+    main {
+        java {
+            srcDirs = ['.']
+            include '*.java'
+        }
+        resources {
+            srcDirs = ['.']
+            include 'fabric.mod.json'
+            include 'redstone_tweaks.mixins.json'
+        }
+    }
+}
+
 processResources {
     inputs.property "version", project.version
     filesMatching("fabric.mod.json") { expand "version": inputs.properties.version }
+    from('en_us.json') { into 'assets/redstone_tweaks/lang' }
 }
 
 tasks.withType(JavaCompile).configureEach { it.options.release = 21 }
